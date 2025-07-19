@@ -24,6 +24,292 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
+     <style>
+        :root {
+            --primary-color: #17a2b8;
+            --secondary-color: #f8f9fa;
+            --accent-color: #17a2b8;
+            --text-dark: #2c3e50;
+            --gradient: linear-gradient(135deg, #2c5aa0 0%, #17a2b8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .header-section {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .profile-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .name-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .name-title .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            gap: 0.8rem;
+        }
+
+        .contact-item i {
+            width: 20px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            padding: 3rem;
+        }
+
+        .sidebar {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+    
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 10px;
+            transition: width 2s ease-in-out;
+        }
+
+        .experience-item, .education-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-subtitle {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            
+            .name-title h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -69,7 +355,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-            <li style="cursor: pointer;"><a id="languageButton" style="cursor: pointer; font-family: 'Tajawal';"> عربي؟ </a></li>
+            <li style="cursor: pointer;"><a  href="#" id="languageButton" style="cursor: pointer; font-family: 'Tajawal';"> عربي؟ </a></li>
           <li><a href="#contact">Contact Us</a></li>
            <li><a href="#services"> Services </a></li>
           <li><a href="#about"> About Us</a></li>
@@ -874,156 +1160,302 @@
 
     </section><!-- /Why Us Section -->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <div class="cv-container">
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="profile-info">
+            <div class="name-title">
+                <h1>Latif Farhan Hussein Al-Hamdani</h1>
+                <div class="subtitle">Eng. Latif Farhan Hussein Al-Hamdani</div>
+                <div class="subtitle">Mechanical Engineer - Expert in Cooling and Heating Systems</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span>07746000448 - 07746000460</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>latifcooling@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>alhamdany@iq.com</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Iraq - Kirkuk - Al-Jumhuriya Street, opposite the Fish Market</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-mailbox"></i>
+                            <span>Postal Code: 36001</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-calendar"></i>
+                            <span>Born: Makhmour - Erbil - Iraq 1981</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-      <h2>Portfolio</h2>
-      <p>Browse a selection of our outstanding work in heating, cooling, and solar energy</p>
-      </div><!-- End Section Title -->
+            <div class="social-links mt-3">
+                <a href="#" class="social-link">
+                    <i class="bi bi-facebook"></i>
+                    <span>Eng Latif Alhamdany</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="bi bi-tiktok"></i>
+                    <span>Abo Firas</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="bi bi-instagram"></i>
+                    <span>Abo Firas</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="bi bi-snapchat"></i>
+                    <span>Abo Firas</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-      <div class="container">
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Languages -->
+            <div class="content-section">
+                <h3 class="section-title">
+                    <i class="bi bi-translate me-2"></i>
+                    Languages
+                </h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Arabic</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Kurdish</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Turkish</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>English</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Persian</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
 
-      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <!-- Statistics -->
+            <div class="content-section">
+                <h3 class="section-title">
+                    <i class="bi bi-graph-up me-2"></i>
+                    Statistics
+                </h3>
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Satisfied Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Technical Support</div>
+                    </div>
+                </div>
+            </div>
 
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-        <li data-filter="*" class="filter-active">All</li>
-        <li data-filter=".filter-cooling">Cooling Systems</li>
-        <li data-filter=".filter-heating">Heating Systems</li>
-        <li data-filter=".filter-solar">Solar Energy</li>
-        <li data-filter=".filter-water">Water Treatment</li>
-        </ul><!-- End Portfolio Filters -->
+            <!-- Specializations -->
+            <div class="content-section">
+                <h3 class="section-title">
+                    <i class="bi bi-gear-fill me-2"></i>
+                    Specializations
+                </h3>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-primary">Central Cooling Systems</span>
+                    <span class="badge bg-info">Package Units</span>
+                    <span class="badge bg-success">Cold Storage</span>
+                    <span class="badge bg-warning">Fresh Air Units</span>
+                    <span class="badge bg-danger">Solar Energy Systems</span>
+                    <span class="badge bg-dark">Water Treatment</span>
+                </div>
+            </div>
+        </div>
 
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            <!-- Education -->
+            <div class="content-section">
+                <h3 class="section-title">
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+                    Academic Qualifications
+                </h3>
+                <div class="education-item">
+                    <div class="item-title">Bachelor's in Mechanical Engineering</div>
+                    <div class="item-subtitle">Northern Technical College</div>
+                    <p>Specialized in heating, cooling, and mechanical energy systems</p>
+                </div>
+                <div class="education-item">
+                    <div class="item-title">Bachelor's in Geology</div>
+                    <div class="item-subtitle">University of Mosul</div>
+                    <p>Comprehensive study in earth sciences and applied geology</p>
+                </div>
+            </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cooling">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-1.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-1.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Central Cooling System</a></h4>
-            <p>Installation of a central cooling system for a commercial complex</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+            <!-- Experience -->
+            <div class="content-section">
+                <h3 class="section-title">
+                    <i class="bi bi-briefcase-fill me-2"></i>
+                    Work Experience
+                </h3>
+                
+                <div class="experience-item">
+                    <div class="item-title">Cooling Systems Engineer - Azadi Teaching Hospital</div>
+                    <div class="item-subtitle">More than 10 years</div>
+                    <p>Worked on cooling devices for the forensic medicine department, burns unit, chillers, and main hospital blowers</p>
+                </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-heating">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-10.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-10.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Heating System</a></h4>
-            <p>Installation of a heating system for a residential building</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+                <div class="experience-item">
+                    <div class="item-title">Cooling Systems Engineer - Oil Training Institute</div>
+                    <div class="item-subtitle">Ministry of Oil - Kirkuk</div>
+                    <p>Worked on cooling devices for the Oil Training Institute building in Kirkuk</p>
+                </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-solar">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-7.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Solar Energy System</a></h4>
-            <p>Installation of solar panels for a residential house</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+                <div class="experience-item">
+                    <div class="item-title">Design and Implementation of Cold Storage</div>
+                    <div class="item-subtitle">Multiple projects in Iraq</div>
+                    <p>Built refrigerated warehouses for food products in Sulaymaniyah, Kalar, Arbat, Kifri, Tikrit, Al-Alam, Samarra, and Hawija</p>
+                </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-water">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-4.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-4.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Water Treatment System</a></h4>
-            <p>Installation of an RO water treatment system</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+                <div class="experience-item">
+                    <div class="item-title">Fresh Air Systems for Hospitals</div>
+                    <div class="item-subtitle">Private Hospitals</div>
+                    <p>Installation and maintenance of fresh air units for operating rooms in private hospitals</p>
+                </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cooling">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-2.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-2.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Cold Storage</a></h4>
-            <p>Design of a cold storage for food products</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+                <div class="experience-item">
+                    <div class="item-title">Medical Oxygen Systems</div>
+                    <div class="item-subtitle">Hospitals</div>
+                    <p>Installation of oxygen systems for hospitals with advanced safety systems</p>
+                </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-heating">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-11.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Heating Boiler</a></h4>
-            <p>Installation of an industrial heating boiler</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+                <div class="experience-item">
+                    <div class="item-title">Central Cooling Systems Maintenance</div>
+                    <div class="item-subtitle">Technological Institute - Chamchamal</div>
+                    <p>Maintenance of central cooling devices with continuous development and updates</p>
+                </div>
+            </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-solar">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-8.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-8.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Solar Power Plant</a></h4>
-            <p>Solar power plant for a factory</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
+            <!-- Services -->
+            <div class="content-section">
+                <h3 class="section-title">
+                    <i class="bi bi-tools me-2"></i>
+                    Specialized Services
+                </h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="experience-item">
+                            <div class="item-title">
+                                <i class="bi bi-thermometer-snow me-2"></i>
+                                Central Cooling Systems
+                            </div>
+                            <p>Supply, installation, and maintenance of central cooling systems and package units</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="experience-item">
+                            <div class="item-title">
+                                <i class="bi bi-cpu me-2"></i>
+                                Chiller Manufacturing
+                            </div>
+                            <p>Dedicated factory for manufacturing chillers and water coolers of all sizes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="experience-item">
+                            <div class="item-title">
+                                <i class="bi bi-wind me-2"></i>
+                                Fresh Air Units
+                            </div>
+                            <p>For operating rooms and forensic medicine cooled rooms</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="experience-item">
+                            <div class="item-title">
+                                <i class="bi bi-sun me-2"></i>
+                                Solar Energy
+                            </div>
+                            <p>Supply and installation of solar energy units for systems</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="experience-item">
+                            <div class="item-title">
+                                <i class="bi bi-droplet me-2"></i>
+                                Water Treatment
+                            </div>
+                            <p>Units for filtering and treating drinking and wastewater</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="experience-item">
+                            <div class="item-title">
+                                <i class="bi bi-wrench me-2"></i>
+                                Original Spare Parts
+                            </div>
+                            <p>Trading all spare parts from original sources</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-water">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-5.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-5.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Water Treatment Plant</a></h4>
-            <p>Industrial water treatment plant</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-cooling">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-3.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-3.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Fresh Air Unit</a></h4>
-            <p>Installation of a fresh air unit for an operating room</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-heating">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-12.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-12.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Underfloor Heating System</a></h4>
-            <p>Installation of underfloor heating for a house</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-solar">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-9.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-9.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Hybrid Solar Energy System</a></h4>
-            <p>Hybrid solar energy system for a commercial building</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-water">
-          <div class="portfolio-content h-100">
-          <a href="assets/img/portfolio/portfolio-6.webp" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/portfolio-6.webp" class="img-fluid" alt=""></a>
-          <div class="portfolio-info">
-            <h4><a href="portfolio-details.html" title="More Details">Advanced Water Purification System</a></h4>
-            <p>Advanced water purification system for a hospital</p>
-          </div>
-          </div>
-        </div><!-- End Portfolio Item -->
-
-        </div><!-- End Portfolio Container -->
-
-      </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section light-background">
