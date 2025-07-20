@@ -1,386 +1,243 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AL-TAER AL ASFAR - Business Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'tajawal': ['Tajawal', 'Arial', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
     <style>
-        * {
-            font-family: "Tajawal";
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            margin: 0;
-            padding: 20px;
-            direction: rtl;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            transform: rotate(45deg);
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -30%;
-            width: 60%;
-            height: 60%;
-            background: rgba(255,204,102,0.3);
-            border-radius: 50%;
-        }
-        
-        .logo-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-shapes {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-        }
-        
-        .circle {
-            border-radius: 50%;
-        }
-        
-        .orange-circle {
-            width: 25px;
-            height: 25px;
-            background: #ffcc66;
-        }
-        
-        .blue-circle {
-            width: 30px;
-            height: 30px;
-            background: #4a5568;
-        }
-        
-        .large-blue {
-            width: 40px;
-            height: 40px;
-            background: #2d3748;
-        }
-        
-        .wave {
-            width: 80px;
-            height: 30px;
-            background: linear-gradient(45deg, #ffcc66, #ffa726);
-            border-radius: 15px;
-            margin-left: 10px;
-        }
-        
-        .company-name {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0;
-        }
-        
-        .company-details {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        
-        .title-section {
-            background: linear-gradient(90deg, #4a5568, #2d3748);
-            padding: 15px 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .main-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 0;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .label {
-            font-weight: bold;
-            color: #4a5568;
-            min-width: 120px;
-        }
-        
-        .placeholder {
-            background: #f7fafc;
-            border: 2px dashed #cbd5e0;
-            padding: 8px 15px;
-            border-radius: 8px;
-            color: #e53e3e;
-            font-weight: bold;
-        }
-        
-        .details-section {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        
-        .details-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .details-list {
-            text-align: right;
-            line-height: 1.8;
-        }
-        
-        .details-list li {
-            margin-bottom: 10px;
-        }
-        
-        .highlight {
-            background: rgba(255,255,255,0.2);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-        
-        .important-note {
-            background: #f0fff4;
-            border: 2px solid #68d391;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .important-note ul {
-            margin: 0;
-            padding-right: 20px;
-        }
-        
-        .footer {
-            background: linear-gradient(135deg, #4a5568, #2d3748);
-            color: white;
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .signature-section {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .signature-box {
-            text-align: center;
-        }
-        
-        .signature-line {
-            width: 150px;
-            height: 2px;
-            background: #cbd5e0;
-            margin: 10px 0;
-        }
-        
-        .stamp {
-            width: 80px;
-            height: 80px;
-            border: 3px dashed #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            text-align: center;
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.1);
-        }
+      @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+      
+      .header-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .body-bg {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+      
+      .header-overlay-1::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transform: rotate(45deg);
+      }
+      
+      .header-overlay-2::after {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -30%;
+        width: 60%;
+        height: 60%;
+        background: rgba(255, 204, 102, 0.3);
+        border-radius: 50%;
+      }
+      
+      .title-section-bg {
+        background: linear-gradient(90deg, #4a5568, #2d3748);
+      }
+      
+      .details-section-bg {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+      
+      .footer-bg {
+        background: linear-gradient(135deg, #4a5568, #2d3748);
+      }
+      
+      .wave-bg {
+        background: linear-gradient(45deg, #ffcc66, #ffa726);
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo-section">
-                <div class="logo">
-                    <div class="logo-shapes">
-                        <div class="circle orange-circle"></div>
-                        <div class="circle blue-circle"></div>
-                        <div class="circle large-blue"></div>
-                        <div class="wave"></div>
-                    </div>
-                    <div>
-                        <h1 class="company-name">شركة الطائر الأصفر</h1>
-                        <div class="company-name" style="font-size: 16px; opacity: 0.9;">AL-TAER AL ASFAR</div>
-                        <div class="company-details">
-                            العراق - بغداد - شارع الربيعي - عمارة سنتر الربيعي<br>
-                            مقابل مول جوهرة بغداد
-                        </div>
-                    </div>
-                </div>
+  </head>
+  <body class="font-tajawal body-bg m-0 p-5" dir="rtl">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl overflow-hidden shadow-2xl">
+      <!-- Header -->
+      <div class="header-bg text-white p-8 relative overflow-hidden header-overlay-1 header-overlay-2">
+        <div class="flex items-center justify-between mb-5 relative z-10">
+          <div class="flex items-center gap-4">
+            <div class="flex gap-1 items-center">
+              <div class="w-6 h-6 bg-yellow-300 rounded-full"></div>
+              <div class="w-8 h-8 bg-gray-600 rounded-full"></div>
+              <div class="w-10 h-10 bg-gray-800 rounded-full"></div>
+              <div class="w-20 h-8 wave-bg rounded-2xl mr-3"></div>
             </div>
-            
-            <div class="title-section">
-                <h2 class="main-title">إعادة بيع منتجات شركة : NEW YOLK</h2>
+            <div>
+              <h1 class="text-2xl font-bold m-0">شركة الطائر الأصفر</h1>
+              <div class="text-base opacity-90">AL-TAER AL ASFAR</div>
+              <div class="text-sm opacity-90 mt-1">
+                العراق - بغداد - شارع الربيعي - عمارة سنتر الربيعي<br />
+                مقابل مول جوهرة بغداد
+              </div>
             </div>
+          </div>
         </div>
-        
-        <div class="content">
-            <div class="form-grid">
-                <div class="form-group">
-                    <span class="label">اسم المشتري :</span>
-                    <span class="placeholder">[[agentsName]]</span>
-                </div>
-                <div class="form-group">
-                    <span class="label">العمر :</span>
-                    <span class="placeholder">[[agentsAge]]</span>
-                </div>
-                
-                <div class="form-group">
-                    <span class="label">رقم الهاتف :</span>
-                    <span class="placeholder">[[agentsPhoneNumber]]</span>
-                </div>
-                <div class="form-group">
-                    <span class="label">Date :</span>
-                    <span class="placeholder">[[DATE]]</span>
-                </div>
-                
-                <div class="form-group">
-                    <span class="label">البريد الإلكتروني :</span>
-                    <span class="placeholder">[[agentsEmail]]</span>
-                </div>
-                <div class="form-group">
-                    <span class="label">Invoice# :</span>
-                    <span class="placeholder">[[INVOICE]]</span>
-                </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border: 2px solid #e2e8f0; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                <div>
-                    <div class="form-group">
-                        <span class="label">نوع الباقة :</span>
-                        <span class="placeholder" style="color: #e53e3e;">[[PT]]</span>
-                    </div>
-                    <div class="form-group" style="margin-top: 10px;">
-                        <span style="color: #e53e3e; font-weight: bold;">[[M]]</span>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="form-group">
-                        <span class="label">المبلغ الكلي المستلم بالدينار العراقي :</span>
-                        <span class="placeholder">[[TMIQ]]</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
-                        <span class="label">عملية الدفع :</span>
-                        <span class="placeholder">[[WOP]]</span>
-                        <span style="color: #38a169; font-weight: bold;">دينار عراقي</span>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <span class="label">عدد الدجاج :</span>
-                        <span class="placeholder" style="color: #e53e3e;">[[INCH]]</span>
-                        <span class="label">تم تأمين :</span>
-                        <span class="placeholder" style="color: #e53e3e;">[[INCH]]</span>
-                        <span>دجاجة</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="details-section">
-                <div class="details-title">دجاج بياض مع نوع ايسا براون</div>
-                <ul class="details-list">
-                    <li>كل دجاجة تنتج من <span class="highlight">300-360</span> بيضة بالسنة الأولى .</li>
-                    <li>عمر الدجاجة من <span class="highlight">6-4</span> أشهر عند عملية الشراء .</li>
-                    <li>تتم عملية انتاج البيض في بداية عمر الدجاجة <span class="highlight">0.05</span> بيضة يوميا تقريبا ويزيد الانتاج تدريجيا لـ <span class="highlight">1</span> بيضة باليوم تقريبا - معدل انتاج البيض خلال السنة الواحدة <span class="highlight">320</span> بيضة تقريبا .</li>
-                    <li>مصاريف كل طير (دجاجة) <span class="highlight">1800</span> دينار عراقي "تقريبا" و تتبع أسعار البورصة المحلية والعالمية .</li>
-                    <li>تكاليف العناية و التغذية و التلقيحات اللازمة لكل دجاجة من انتاج البيض بعد عملية التغذية</li>
-                    <li>يتم خصم التكاليف من انتاج البيض .</li>
-                    <li>سعر البيضة الواحدة <span class="highlight">200</span> دينار تقريبا ويتراوح سعر البيض حسب سعر البورصة المعتمدة في رومانيا و الاتحاد الأوربي من <span class="highlight">100-300</span> دينار عراقي تقريبا للبيضة الواحدة للبيضة الواحدة .</li>
-                    <li>في حال دفع أجور تأمين <span class="highlight">4000</span> دينار عراقي للدجاجة الواحد - ان حصل أي ضرر للدجاجة في حال أمراض أو النفوق - يتم استبدال الدجاجة بدجاجة جديدة منتجة للبيض .</li>
-                </ul>
-            </div>
-            
-            <div class="important-note">
-                <ul>
-                    <li>الشركة غير مسؤولة عن فقدان المحفظة أو ضياع الرقم السري .</li>
-                    <li>مدة العقد سنة واحدة فقط قابلة للتجديد .</li>
-                    <li>في حال المطالبة باسترجاع المبلغ وفسخ العقد من قبل الطرف الثاني او المشتري يتحمل مبلغ وقدره <span class="highlight">25%</span> من قيمة العقد المبرم بين الطرفين.</li>
-                </ul>
-            </div>
+
+        <div class="title-section-bg p-4 relative z-10 rounded">
+          <h2 class="text-xl font-bold m-0">إعادة بيع منتجات شركة : NEW YOLK</h2>
         </div>
-        
-        <div class="footer">
-            <div>قررت وبكامل قناعتي قد وقعت العقد</div>
-            <div class="signature-section">
-                <div class="signature-box">
-                    <div>الطرف الأول</div>
-                    <div>شركة الطائر الأصفر</div>
-                    <div class="signature-line"></div>
-                </div>
-                
-                <div class="stamp">
-                    <div style="font-size: 8px; line-height: 1.2;">
-                        New Yolk<br>
-                        Farms
-                    </div>
-                </div>
-                
-                <div class="signature-box">
-                    <div>الطرف الثاني المشتري</div>
-                    <div class="signature-line"></div>
-                </div>
-            </div>
+      </div>
+
+      <!-- Content -->
+      <div class="p-8">
+        <div class="grid grid-cols-2 gap-5 mb-8">
+          <div class="flex items-center gap-3">
+            <span class="font-bold text-gray-600">اسم المشتري:</span>
+            <span class="bg-gray-50 border-2 border-dashed border-gray-300 py-2 px-4 rounded-lg text-red-600 font-bold">[[agentsName]]</span>
+          </div>
+
+          <div class="flex items-center gap-3 justify-end">
+            <span class="bg-gray-50 border-2 border-dashed border-gray-300 py-2 px-4 rounded-lg text-red-600 font-bold">[[INVOICE]]#</span>
+            <span class="font-bold text-gray-600">:Invoice</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="font-bold text-gray-600">رقم الهاتف:</span>
+            <span class="bg-gray-50 border-2 border-dashed border-gray-300 py-2 px-4 rounded-lg text-red-600 font-bold">[[agentsPhoneNumber]]</span>
+          </div>
+
+          <div class="flex items-center gap-3 justify-end">
+            <span class="bg-gray-50 border-2 border-dashed border-gray-300 py-2 px-4 rounded-lg text-red-600 font-bold">[[DATE]]</span>
+            <span class="font-bold text-gray-600">:Date</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="font-bold text-gray-600">البريد الإلكتروني:</span>
+            <span class="bg-gray-50 border-2 border-dashed border-gray-300 py-2 px-4 rounded-lg text-red-600 font-bold">[[agentsEmail]]</span>
+          </div>
         </div>
+
+        <!-- Package Details Section -->
+        <div class="grid grid-cols-3 gap-6 border-2 border-gray-200 p-6 rounded-xl my-6 bg-gray-50">
+          <!-- Left Side -->
+          <div>
+            <div class="mb-3">
+              نوع الباقة :
+              <span class="text-red-600 font-bold">[[PT]]</span>
+            </div>
+            <div>
+              <span class="text-red-600 font-bold">[[M]]</span>
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-span-2">
+            <div class="mb-3">
+              <span class="font-medium text-gray-800">
+                المبلغ الكلي المستلم بالدينار العراقي:
+              </span>
+              <span class="font-bold"> [[TMIQ]] </span>
+              <span class="text-green-600 font-bold">دينار عراقي</span>
+            </div>
+
+            <div class="flex items-center gap-1 mb-3">
+              <label class="font-medium text-gray-800">عملية الدفع:</label>
+              <span>[[WOP]]</span>
+            </div>
+
+            <div>
+              <label class="font-medium text-gray-800">عدد الدجاج :</label>
+              <span class="text-red-600 font-bold">[[INCH]]</span>
+              <label class="font-medium text-gray-800">تم تأمين:</label>
+              <span class="text-red-600 font-bold">[[INCH]]</span>
+              <span>دجاجة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="details-section-bg text-white p-5 rounded-lg my-8 text-center">
+          <div class="text-lg font-bold mb-5">دجاج بياض مع نوع ايسا براون</div>
+          <ul class="text-right leading-loose list-none">
+            <li class="mb-3">
+              كل دجاجة تنتج من <span class="bg-white bg-opacity-20 px-2 py-1 rounded">300-360</span> بيضة
+              بالسنة الأولى .
+            </li>
+            <li class="mb-3">
+              عمر الدجاجة من <span class="bg-white bg-opacity-20 px-2 py-1 rounded">6-4</span> أشهر عند عملية
+              الشراء .
+            </li>
+            <li class="mb-3">
+              تتم عملية انتاج البيض في بداية عمر الدجاجة
+              <span class="bg-white bg-opacity-20 px-2 py-1 rounded">0.05</span> بيضة يوميا تقريبا ويزيد
+              الانتاج تدريجيا لـ <span class="bg-white bg-opacity-20 px-2 py-1 rounded">1</span> بيضة باليوم
+              تقريبا - معدل انتاج البيض خلال السنة الواحدة
+              <span class="bg-white bg-opacity-20 px-2 py-1 rounded">320</span> بيضة تقريبا .
+            </li>
+            <li class="mb-3">
+              مصاريف كل طير (دجاجة) <span class="bg-white bg-opacity-20 px-2 py-1 rounded">1800</span> دينار
+              عراقي "تقريبا" و تتبع أسعار البورصة المحلية والعالمية .
+            </li>
+            <li class="mb-3">
+              تكاليف العناية و التغذية و التلقيحات اللازمة لكل دجاجة من انتاج
+              البيض بعد عملية التغذية
+            </li>
+            <li class="mb-3">يتم خصم التكاليف من انتاج البيض .</li>
+            <li class="mb-3">
+              سعر البيضة الواحدة <span class="bg-white bg-opacity-20 px-2 py-1 rounded">200</span> دينار تقريبا
+              ويتراوح سعر البيض حسب سعر البورصة المعتمدة في رومانيا و الاتحاد
+              الأوربي من <span class="bg-white bg-opacity-20 px-2 py-1 rounded">100-300</span> دينار عراقي
+              تقريبا للبيضة الواحدة للبيضة الواحدة .
+            </li>
+            <li class="mb-3">
+              في حال دفع أجور تأمين <span class="bg-white bg-opacity-20 px-2 py-1 rounded">4000</span> دينار
+              عراقي للدجاجة الواحد - ان حصل أي ضرر للدجاجة في حال أمراض أو
+              النفوق - يتم استبدال الدجاجة بدجاجة جديدة منتجة للبيض .
+            </li>
+          </ul>
+        </div>
+
+        <!-- Important Note -->
+        <div class="bg-green-50 border-2 border-green-400 rounded-lg p-5 my-5">
+          <ul class="m-0 pr-5 list-disc">
+            <li>الشركة غير مسؤولة عن فقدان المحفظة أو ضياع الرقم السري .</li>
+            <li>مدة العقد سنة واحدة فقط قابلة للتجديد .</li>
+            <li>
+              في حال المطالبة باسترجاع المبلغ وفسخ العقد من قبل الطرف الثاني او
+              المشتري يتحمل مبلغ وقدره <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-gray-800 font-bold">25%</span> من
+              قيمة العقد المبرم بين الطرفين.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-bg text-white p-5 flex justify-between items-center">
+        <div>قررت وبكامل قناعتي قد وقعت العقد</div>
+        <div class="flex gap-10 items-center">
+          <div class="text-center">
+            <div>الطرف الأول</div>
+            <div>شركة الطائر الأصفر</div>
+            <div class="w-36 h-0.5 bg-gray-300 my-3"></div>
+          </div>
+
+          <div class="w-20 h-20 border-4 border-dashed border-indigo-500 rounded-full flex items-center justify-center text-xs text-center text-indigo-500 bg-indigo-50">
+            <img class="w-16 rounded-full" src="./logo.png" alt="Logo" />
+          </div>
+
+          <div class="text-center">
+            <div>الطرف الثاني المشتري</div>
+            <div class="w-36 h-0.5 bg-gray-300 my-3"></div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
