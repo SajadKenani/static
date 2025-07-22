@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر التقنية - إلكترونيات فاخرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            direction: rtl;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .language-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Intro section */
+        .intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .intro h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Products grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .product-card:nth-child(2) .product-image {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .product-card:nth-child(3) .product-image {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .product-card:nth-child(4) .product-image {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+
+        .product-card:nth-child(5) .product-image {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+        }
+
+        .product-card:nth-child(6) .product-image {
+            background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 25px;
+            text-align: right;
+        }
+
+        .product-category {
+            color: #4ecdc4;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .product-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            justify-content: flex-end;
+        }
+
+        .stars {
+            color: #ffd700;
+        }
+
+        .rating-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .price-current {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #4ecdc4;
+        }
+
+        .price-original {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: line-through;
+            font-size: 1rem;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .btn-add-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.4);
+        }
+
+        /* Mobile navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .header-container {
+                padding: 0 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: rgba(102, 126, 234, 0.95);
+                padding: 20px;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(20px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .intro h1 {
+                font-size: 2.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .product-info {
+                text-align: center;
+            }
+
+            .product-rating {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">متجر التقنية</div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                              <li><a href="/index-ar.html" class="active"> الرئيسية </a></li>
+
+                    <li><a href="#" class="language-toggle">English?</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" id="mobileToggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Intro section -->
+        <section class="intro">
+            <h1>إلكترونيات فاخرة</h1>
+            <p>اكتشف مجموعتنا المختارة بعناية من التقنيات المتطورة والإلكترونيات الفاخرة المصممة لتعزيز نمط حياتك الرقمي.</p>
+        </section>
+
+        <!-- Products grid -->
+        <section class="products-grid" id="products">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>🎧</span>
+                    <div class="product-badge">الأكثر مبيعاً</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">سماعات الرأس</div>
+                    <h3 class="product-title">أورا ساوند برو</h3>
+                    <p class="product-description">سماعات لاسلكية فاخرة مع إلغاء الضوضاء النشط وبطارية تدوم 30 ساعة.</p>
+                    <div class="product-rating">
+                        <span class="rating-text">(1,248 تقييم)</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-original">$399</span>
+                        <span class="price-current">$299</span>
+                    </div>
+                    <button class="btn-add-cart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>📱</span>
+                    <div class="product-badge">جديد</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">الهواتف الذكية</div>
+                    <h3 class="product-title">نيو فون إكس1</h3>
+                    <p class="product-description">أحدث هاتف ذكي مع كاميرا مدعومة بالذكاء الاصطناعي وأداء فائق السرعة.</p>
+                    <div class="product-rating">
+                        <span class="rating-text">(856 تقييم)</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-original">$1,099</span>
+                        <span class="price-current">$899</span>
+                    </div>
+                    <button class="btn-add-cart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>💻</span>
+                    <div class="product-badge">احترافي</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">أجهزة الكمبيوتر المحمولة</div>
+                    <h3 class="product-title">ألترا بوك برو 15</h3>
+                    <p class="product-description">جهاز كمبيوتر محمول عالي الأداء للمحترفين مع شاشة ريتينا مذهلة وبطارية تدوم طوال اليوم.</p>
+                    <div class="product-rating">
+                        <span class="rating-text">(634 تقييم)</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-original">$2,199</span>
+                        <span class="price-current">$1,799</span>
+                    </div>
+                    <button class="btn-add-cart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>⌚</span>
+                    <div class="product-badge">صحي</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">الساعات الذكية</div>
+                    <h3 class="product-title">فايتال واتش سيريز 8</h3>
+                    <p class="product-description">ساعة ذكية متقدمة لمراقبة الصحة مع تخطيط القلب وأكسجين الدم وتتبع اللياقة البدنية.</p>
+                    <div class="product-rating">
+                        <span class="rating-text">(923 تقييم)</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-original">$499</span>
+                        <span class="price-current">$399</span>
+                    </div>
+                    <button class="btn-add-cart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>🔊</span>
+                    <div class="product-badge">استوديو</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">السماعات</div>
+                    <h3 class="product-title">ساوند ويف استوديو</h3>
+                    <p class="product-description">سماعة لاسلكية بجودة احترافية مع صوت محيطي 360° وجودة صوت الاستوديو.</p>
+                    <div class="product-rating">
+                        <span class="rating-text">(445 تقييم)</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-original">$699</span>
+                        <span class="price-current">$549</span>
+                    </div>
+                    <button class="btn-add-cart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span>🎮</span>
+                    <div class="product-badge">ألعاب</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">الألعاب</div>
+                    <h3 class="product-title">جيم باد برو إليت</h3>
+                    <p class="product-description">جهاز تحكم ألعاب احترافي مع أزرار قابلة للتخصيص وزمن استجابة منخفض جداً.</p>
+                    <div class="product-rating">
+                        <span class="rating-text">(789 تقييم)</span>
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-original">$199</span>
+                        <span class="price-current">$149</span>
+                    </div>
+                    <button class="btn-add-cart">إضافة للسلة</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mobile navigation toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            
+            // Toggle icon
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        // Add simple hover effects and interactions
+        document.querySelectorAll('.btn-add-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const originalText = this.textContent;
+                this.textContent = 'تمت الإضافة!';
+                this.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = 'linear-gradient(135deg, #4ecdc4, #44a08d)';
+                }, 1500);
+            });
+        });
+
+        // Add smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Language toggle functionality
+        document.querySelector('.language-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+   
+        window.location.href = "products.html"; // Redirect to English version
+ 
+        }         );
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                const mobileToggle = document.getElementById('mobileToggle');
+                navLinks.classList.remove('active');
+                mobileToggle.textContent = '☰';
+            });
+        });
+    </script>
+</body>
+</html>
