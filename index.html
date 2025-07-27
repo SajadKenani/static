@@ -529,6 +529,153 @@
     }
   </style>
 
+    <style>
+        .products {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .products-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .products-intro h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .products-intro p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-badge.pure {
+            background: #3498db;
+        }
+
+        .product-badge.professional {
+            background: #9b59b6;
+        }
+
+        .product-badge.eco-friendly {
+            background: #27ae60;
+        }
+
+        .product-badge.commercial {
+            background: #f39c12;
+        }
+
+        .product-badge.industrial {
+            background: #34495e;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: #3498db;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: black;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .products-intro h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
@@ -866,104 +1013,97 @@
 
     </section><!-- /Services Section -->
 
-    <!-- Products Section -->
+  <!-- Products Section -->
     <section id="products" class="products section">
       <div class="products-container">
         <!-- Products Intro -->
-        <div class="products-intro" data-aos="fade-up">
+        <div class="products-intro">
           <h2>Our Products</h2>
           <p>Discover our specialized collection of cooling systems, water purification, and solar energy equipment designed to provide comfort and quality for your home and office.</p>
         </div>
 
         <!-- Products Grid -->
-        <div class="products-grid" data-aos="fade-up" data-aos-delay="100">
-          <!-- Product 1 - Cooling Systems -->
-          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="products-grid">
+          <!-- Product 1 - AeroChill -->
+          <div class="product-card">
             <div class="product-image">
-              <span>❄️</span>
+              <img src="https://madebydesignesia.com/themes/coolair/images/products/4.webp" alt="AeroChill AC Unit">
               <div class="product-badge">Best Seller</div>
             </div>
             <div class="product-info">
               <div class="product-category">Cooling Systems</div>
-              <h3 class="product-title">CoolMaster Pro AC Unit</h3>
+              <h3 class="product-title">AeroChill</h3>
               <p class="product-description">High-efficiency air conditioning unit with inverter technology and energy savings, perfect for large spaces.</p>
-              
             </div>
           </div>
 
-          <!-- Product 2 - Water Purification -->
-          <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+          <!-- Product 2 - ClimaComfort -->
+          <div class="product-card">
             <div class="product-image">
-              <span>💧</span>
-              <div class="product-badge">Pure</div>
+              <img src="https://madebydesignesia.com/themes/coolair/images/products/5.webp" alt="ClimaComfort Ceiling Unit">
+              <div class="product-badge pure">Premium</div>
             </div>
             <div class="product-info">
-              <div class="product-category">Water Purification</div>
-              <h3 class="product-title">AquaPure Max Filter</h3>
-              <p class="product-description">Advanced 7-stage water purification system ensuring the purest and best-tasting water for your family.</p>
-              
+              <div class="product-category">Ceiling Cooling</div>
+              <h3 class="product-title">ClimaComfort</h3>
+              <p class="product-description">Advanced ceiling-mounted cooling system with optimal air distribution and whisper-quiet operation.</p>
             </div>
           </div>
 
-          <!-- Product 3 - RO Systems -->
-          <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+          <!-- Product 3 - AeroChill Outdoor -->
+          <div class="product-card">
             <div class="product-image">
-              <span>🌊</span>
-              <div class="product-badge">Professional</div>
+              <img src="https://madebydesignesia.com/themes/coolair/images/products/6.webp" alt="AeroChill Outdoor Unit">
+              <div class="product-badge professional">Professional</div>
             </div>
             <div class="product-info">
-              <div class="product-category">Reverse Osmosis Systems</div>
-              <h3 class="product-title">HydroElite RO System</h3>
-              <p class="product-description">Advanced reverse osmosis system with 50L tank and 5-year warranty, removes 99.9% of contaminants.</p>
-              
+              <div class="product-category">Outdoor Systems</div>
+              <h3 class="product-title">AeroChill Outdoor</h3>
+              <p class="product-description">Durable outdoor cooling unit with weather-resistant design and high-efficiency compressor technology.</p>
             </div>
           </div>
 
-          <!-- Product 4 - Solar Panels -->
-          <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+          <!-- Product 4 - PolarAir -->
+          <div class="product-card">
             <div class="product-image">
-              <span>☀️</span>
-              <div class="product-badge">Eco-Friendly</div>
+              <img src="https://madebydesignesia.com/themes/coolair/images/products/3.webp" alt="PolarAir Commercial Unit">
+              <div class="product-badge eco-friendly">Commercial</div>
             </div>
             <div class="product-info">
-              <div class="product-category">Solar Energy</div>
-              <h3 class="product-title">SolarTech 400W Panel</h3>
-              <p class="product-description">High-efficiency 400W solar panel with 25-year warranty and monocrystalline technology.</p>
-              
+              <div class="product-category">Commercial Cooling</div>
+              <h3 class="product-title">PolarAir</h3>
+              <p class="product-description">Heavy-duty commercial cooling system designed for large spaces with superior energy efficiency.</p>
             </div>
           </div>
 
-          <!-- Product 5 - Central Cooling -->
-          <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+          <!-- Product 5 - ZephyrCool -->
+          <div class="product-card">
             <div class="product-image">
-              <span>🏢</span>
-              <div class="product-badge">Commercial</div>
+              <img src="https://madebydesignesia.com/themes/coolair/images/products/2.webp" alt="ZephyrCool Central Unit">
+              <div class="product-badge commercial">Industrial</div>
             </div>
             <div class="product-info">
               <div class="product-category">Central Cooling</div>
-              <h3 class="product-title">CentralCool 5-Ton System</h3>
-              <p class="product-description">5-ton central cooling system perfect for commercial buildings with optimal cold air distribution.</p>
-              
+              <h3 class="product-title">ZephyrCool</h3>
+              <p class="product-description">Industrial-grade central cooling system with advanced filtration and climate control features.</p>
             </div>
           </div>
 
-          <!-- Product 6 - Desalination Equipment -->
-          <div class="product-card" data-aos="fade-up" data-aos-delay="600">
+          <!-- Product 6 - PolarAir Compact -->
+          <div class="product-card">
             <div class="product-image">
-              <span>⚗️</span>
-              <div class="product-badge">Industrial</div>
+              <img src="https://madebydesignesia.com/themes/coolair/images/products/1.webp" alt="PolarAir Compact Unit">
+              <div class="product-badge industrial">Compact</div>
             </div>
             <div class="product-info">
-              <div class="product-category">Desalination Equipment</div>
-              <h3 class="product-title">Desal 1000 Plant</h3>
-              <p class="product-description">Seawater desalination plant with 1000L/hour capacity using advanced reverse osmosis technology.</p>
-              
+              <div class="product-category">Compact Systems</div>
+              <h3 class="product-title">PolarAir Compact</h3>
+              <p class="product-description">Space-saving cooling solution with powerful performance, ideal for residential and small commercial use.</p>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /Products Section -->
-
+    </section>
     <!-- Alt Services Section -->
     <section id="alt-services" class="alt-services section">
 
