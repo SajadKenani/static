@@ -663,6 +663,248 @@
         }
     </style>
 
+      <style>
+
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #007bff;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #007bff;
+        }
+
+        .btn-outline:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Image Slider Styles */
+        .hero-slider {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation Dots */
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .dot.active {
+            background: #007bff;
+            border-color: #007bff;
+            transform: scale(1.2);
+        }
+
+        /* Navigation Arrows */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .slider-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-nav.prev {
+            left: 20px;
+        }
+
+        .slider-nav.next {
+            right: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-slider {
+                height: 300px;
+                margin-bottom: 40px;
+            }
+
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .slider-nav.prev {
+                left: 10px;
+            }
+
+            .slider-nav.next {
+                right: 10px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .zoom-out {
+            opacity: 0;
+            transform: scale(1.1);
+            animation: zoomOut 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomOut {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+
   <!-- =======================================================
   * Template Name: مكتب الحمداني لانظمة التبريد والتحلية
   * Template URL: https://bootstrapmade.com/مكتب الحمداني لانظمة التبريد والتحلية-bootstrap-corporate-template/
@@ -724,43 +966,65 @@
   </header>
 <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center">
-                    <div class="col-lg-6">
-            <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-              <img src="assets/img/about/about-8.avif" alt="خدمات التدفئة والتبريد" class="img-fluid">
+  <section id="hero" class="hero section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="hero-slider zoom-out">
+                        <div class="slider-container">
+                            <div class="slide active">
+                                <img src="assets/img/about/about-8.avif" alt="خدمات التدفئة والتبريد">
+                            </div>
+                            <div class="slide">
+                                <img src="assets/img/about/about-9.jpg" alt="خدمات التدفئة والتبريد">
+                            </div>
+                            <div class="slide">
+                                <img src="assets/img/about/about-10.avif" alt="خدمات التدفئة والتبريد">
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="slider-nav prev" onclick="changeSlide(-1)"> < </button>
+                        <button class="slider-nav next" onclick="changeSlide(1)"> > </button>
+                        
+                        <!-- Navigation Dots -->
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="hero-content fade-up">
+                        <h2>حلول متكاملة لأنظمة التدفئة والتبريد</h2>
+                        <p>نقدم خدمات شاملة في مجال التدفئة والتبريد بكافة اختصاصاتها من الجلرات وأجهزة التبريد المركزي والبكج يونت ومخازن التبريد والتجميد للمواد الغذائية وحدات الفريش اير لغرف العمليات والغرف المبردة للطب العدلي.</p>
+                        
+                        <div class="hero-btns">
+                            <a href="#contact" class="btn btn-primary">احصل على استشارة مجانية</a>
+                            <a href="#services" class="btn btn-outline">خدماتنا</a>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <h3><span class="counter" data-target="40">0</span>+</h3>
+                                <p>سنوات الخبرة</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3><span class="counter" data-target="500">0</span>+</h3>
+                                <p>مشروع مكتمل</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3><span class="counter" data-target="98">0</span>%</h3>
+                                <p>نسبة رضا العملاء</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-              <h2>حلول متكاملة لأنظمة التدفئة والتبريد</h2>
-             <p>نقدم خدمات شاملة في مجال التدفئة والتبريد بكافة اختصاصاتها من الجلرات وأجهزة التبريد المركزي والبكج يونت ومخازن التبريد والتجميد للمواد الغذائية وحدات الفريش اير لغرف العمليات والغرف المبردة للطب العدلي.</p>
-              <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary">احصل على استشارة مجانية</a>
-                <a href="#services" class="btn btn-outline">خدماتنا</a>
-              </div>
-              <div class="hero-stats">
-                <div class="stat-item">
-                  <h3><span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                  <p>سنوات الخبرة</p>
-                </div>
-                <div class="stat-item">
-                  <h3><span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                  <p>مشروع مكتمل</p>
-                </div>
-                <div class="stat-item">
-                  <h3><span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1" class="purecounter"></span>%</h3>
-                  <p>نسبة رضا العملاء</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section><!-- /Hero Section -->
+    </section>
 
 
     <!-- /Clients Section -->
@@ -1982,6 +2246,112 @@
         window.location.href = "index.html"; // Redirect to English version
     });
   </script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        // Auto-slide functionality
+        function autoSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(currentSlideIndex);
+        }
+        
+        // Start auto-slide
+        let slideInterval = setInterval(autoSlide, 4000);
+        
+        // Manual slide change
+        function changeSlide(direction) {
+            clearInterval(slideInterval);
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = slides.length - 1;
+            }
+            
+            showSlide(currentSlideIndex);
+            slideInterval = setInterval(autoSlide, 4000);
+        }
+        
+        // Jump to specific slide
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            currentSlideIndex = n - 1;
+            showSlide(currentSlideIndex);
+            slideInterval = setInterval(autoSlide, 4000);
+        }
+        
+        // Show specific slide
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+        }
+        
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('hero-content')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                observer.observe(heroContent);
+            }
+        });
+        
+        // Pause slider on hover
+        const sliderContainer = document.querySelector('.hero-slider');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoSlide, 4000);
+        });
+    </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
