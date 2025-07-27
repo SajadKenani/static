@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>مكتب الحمداني لانظمة التبريد والتحلية</title>
+  <title>Al-Hamdani Office for Cooling and Desalination Systems</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -17,6 +17,8 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Tajawal' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -24,302 +26,511 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-     <style>
-        :root {
-            --primary-color: #17a2b8;
-            --secondary-color: #f8f9fa;
-            --accent-color: #17a2b8;
-            --text-dark: #2c3e50;
-            --gradient: linear-gradient(135deg, #2c5aa0 0%, #17a2b8 100%);
-        }
+  <style>
+    :root {
+        --primary-color: #17a2b8;
+        --secondary-color: #f8f9fa;
+        --accent-color: #17a2b8;
+        --text-dark: #2c3e50;
+        --gradient: linear-gradient(135deg, #2c5aa0 0%, #17a2b8 100%);
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+    }
 
-        .cv-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            background: white;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            border-radius: 20px;
-            overflow: hidden;
-        }
+    /* Products Section Styles */
+    #products {
+        background: linear-gradient(135deg, #22c1c3 0%, #106668 100%);
+        color: white;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .header-section {
-            background: var(--gradient);
-            color: white;
-            padding: 3rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
+    #products::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        pointer-events: none;
+    }
 
-        .header-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s linear infinite;
-        }
+    .products-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 2;
+    }
 
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
+    .products-intro {
+        text-align: center;
+        margin-bottom: 80px;
+    }
 
-        .profile-info {
-            position: relative;
-            z-index: 2;
-        }
+    .products-intro h2 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
-        .name-title h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+    .products-intro p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
 
-        .name-title .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
 
-        .contact-info {
-            margin-top: 2rem;
-        }
+    .product-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        position: relative;
+    }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            gap: 0.8rem;
-        }
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
 
-        .contact-item i {
-            width: 20px;
-            text-align: center;
-            opacity: 0.9;
-        }
+    .product-image {
+        height: 200px;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        position: relative;
+    }
 
+    .product-card:nth-child(2) .product-image {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    .product-card:nth-child(3) .product-image {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+
+    .product-card:nth-child(4) .product-image {
+        background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+    }
+
+    .product-card:nth-child(5) .product-image {
+        background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    }
+
+    .product-card:nth-child(6) .product-image {
+        background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
+    }
+
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .product-info {
+        padding: 25px;
+        text-align: left;
+    }
+
+    .product-category {
+        color: #4ecdc4;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .product-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: white;
+    }
+
+    .product-description {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .product-rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        justify-content: flex-start;
+    }
+
+    .stars {
+        color: #ffd700;
+    }
+
+    .rating-text {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+    }
+
+    .product-price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .price-current {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #4ecdc4;
+    }
+
+    .price-original {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: line-through;
+        font-size: 1rem;
+    }
+
+    .btn-add-cart {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .btn-add-cart:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(78, 205, 196, 0.4);
+    }
+
+    .cv-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        background: white;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .header-section {
+        background: var(--gradient);
+        color: white;
+        padding: 3rem 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .profile-info {
+        position: relative;
+        z-index: 2;
+    }
+
+    .name-title h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .name-title .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+    .contact-info {
+        margin-top: 2rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .contact-item i {
+        width: 20px;
+        text-align: center;
+        opacity: 0.9;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        padding: 3rem;
+    }
+
+    .sidebar {
+        background: var(--secondary-color);
+        padding: 2rem;
+        border-radius: 15px;
+        height: fit-content;
+    }
+
+    .content-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+    }
+
+    .skill-item {
+        margin-bottom: 1rem;
+    }
+
+    .skill-name {
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .skill-bar {
+        height: 8px;
+        background: #e9ecef;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .skill-progress {
+        height: 100%;
+        background: var(--gradient);
+        border-radius: 10px;
+        transition: width 2s ease-in-out;
+    }
+
+    .experience-item, .education-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-left: 4px solid var(--accent-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-item:hover, .education-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .item-title {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .item-subtitle {
+        color: var(--accent-color);
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: white;
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .social-link:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .stat-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
         .main-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            padding: 3rem;
-        }
-
-        .sidebar {
-            background: var(--secondary-color);
+            grid-template-columns: 1fr;
+            gap: 2rem;
             padding: 2rem;
-            border-radius: 15px;
-            height: fit-content;
         }
-
-        .content-section {
-            margin-bottom: 2.5rem;
+        
+        .name-title h1 {
+            font-size: 2rem;
         }
-
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-    
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-
-        }
-
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-
-        .skill-name {
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 10px;
-            transition: width 2s ease-in-out;
-        }
-
-        .experience-item, .education-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--accent-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-item:hover, .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .item-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .item-subtitle {
-            color: var(--accent-color);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .stats-section {
+        
+        .contact-info {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
         }
 
-        .stat-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
+        .products-container {
+            padding: 0 20px;
+        }
+
+        .products-intro h2 {
+            font-size: 2.5rem;
+        }
+
+        .products-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-info {
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+        .product-rating {
+            justify-content: center;
         }
+    }
 
-        .stat-label {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 0.2rem;
+    .print-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--gradient);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .print-btn:hover {
+        transform: scale(1.1);
+    }
+
+    @media print {
+        body {
+            background: white;
         }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 2rem;
-            }
-            
-            .name-title h1 {
-                font-size: 2rem;
-            }
-            
-            .contact-info {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
+        .cv-container {
+            box-shadow: none;
+            margin: 0;
         }
-
         .print-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            z-index: 1000;
+            display: none;
         }
-
-        .print-btn:hover {
-            transform: scale(1.1);
-        }
-
-        @media print {
-            body {
-                background: white;
-            }
-            .cv-container {
-                box-shadow: none;
-                margin: 0;
-            }
-            .print-btn {
-                display: none;
-            }
-        }
-    </style>
+    }
+  </style>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: مكتب الحمداني لانظمة التبريد والتحلية
-  * Template URL: https://bootstrapmade.com/مكتب الحمداني لانظمة التبريد والتحلية-bootstrap-corporate-template/
-  * Updated: Jun 23 2025 with Bootstrap v5.3.6
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -328,51 +539,24 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/logo.png" alt="">
-        <!-- <h1 class="sitename"><span>e</span>Business</h1> -->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          
-         
-
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> -->
-            <li style="cursor: pointer;"><a  href="#" id="languageButton" style="cursor: pointer; font-family: 'Tajawal';"> عربي؟ </a></li>
-          <li><a href="/static/contact.html">Contact Us</a></li>
-          <li><a href="/static/products.html">Our Products</a></li>
-           <li><a href="#services"> Services </a></li>
-          <li><a href="#about"> About Us</a></li>
-          <li><a href="#hero" class="active"> Home </a></li>
-        
-
-        
-        
+          <li style="cursor: pointer;"><a href="#" id="languageButton" style="cursor: pointer; font-family: 'Tajawal';">عربي؟</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#products">Our Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#hero" class="active">Home</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
-
     </div>
   </header>
+
 <main class="main">
 
     <!-- Hero Section -->
@@ -411,8 +595,6 @@
     </div>
   </div>
 </section><!-- /Hero Section -->
-
-
 
     <!-- About Section -->
  <section id="about" class="about section light-background">
@@ -480,7 +662,7 @@
             <img src="assets/img/about/about-square-1.jpg" alt="Cooling Works" class="img-fluid small-image rounded-4">
           </div>
           <div class="experience-badge floating">
-            <h3>15+ <span>Years</span></h3>
+            <h3>40+ <span>Years</span></h3>
             <p>Experience in our field</p>
           </div>
         </div>
@@ -684,6 +866,104 @@
 
     </section><!-- /Services Section -->
 
+    <!-- Products Section -->
+    <section id="products" class="products section">
+      <div class="products-container">
+        <!-- Products Intro -->
+        <div class="products-intro" data-aos="fade-up">
+          <h2>Our Products</h2>
+          <p>Discover our specialized collection of cooling systems, water purification, and solar energy equipment designed to provide comfort and quality for your home and office.</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" data-aos="fade-up" data-aos-delay="100">
+          <!-- Product 1 - Cooling Systems -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-image">
+              <span>❄️</span>
+              <div class="product-badge">Best Seller</div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Cooling Systems</div>
+              <h3 class="product-title">CoolMaster Pro AC Unit</h3>
+              <p class="product-description">High-efficiency air conditioning unit with inverter technology and energy savings, perfect for large spaces.</p>
+              
+            </div>
+          </div>
+
+          <!-- Product 2 - Water Purification -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-image">
+              <span>💧</span>
+              <div class="product-badge">Pure</div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Water Purification</div>
+              <h3 class="product-title">AquaPure Max Filter</h3>
+              <p class="product-description">Advanced 7-stage water purification system ensuring the purest and best-tasting water for your family.</p>
+              
+            </div>
+          </div>
+
+          <!-- Product 3 - RO Systems -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-image">
+              <span>🌊</span>
+              <div class="product-badge">Professional</div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Reverse Osmosis Systems</div>
+              <h3 class="product-title">HydroElite RO System</h3>
+              <p class="product-description">Advanced reverse osmosis system with 50L tank and 5-year warranty, removes 99.9% of contaminants.</p>
+              
+            </div>
+          </div>
+
+          <!-- Product 4 - Solar Panels -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-image">
+              <span>☀️</span>
+              <div class="product-badge">Eco-Friendly</div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Solar Energy</div>
+              <h3 class="product-title">SolarTech 400W Panel</h3>
+              <p class="product-description">High-efficiency 400W solar panel with 25-year warranty and monocrystalline technology.</p>
+              
+            </div>
+          </div>
+
+          <!-- Product 5 - Central Cooling -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="product-image">
+              <span>🏢</span>
+              <div class="product-badge">Commercial</div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Central Cooling</div>
+              <h3 class="product-title">CentralCool 5-Ton System</h3>
+              <p class="product-description">5-ton central cooling system perfect for commercial buildings with optimal cold air distribution.</p>
+              
+            </div>
+          </div>
+
+          <!-- Product 6 - Desalination Equipment -->
+          <div class="product-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="product-image">
+              <span>⚗️</span>
+              <div class="product-badge">Industrial</div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Desalination Equipment</div>
+              <h3 class="product-title">Desal 1000 Plant</h3>
+              <p class="product-description">Seawater desalination plant with 1000L/hour capacity using advanced reverse osmosis technology.</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Products Section -->
+
     <!-- Alt Services Section -->
     <section id="alt-services" class="alt-services section">
 
@@ -772,6 +1052,7 @@
         </div>
       </div>
     </section><!-- /Alt Services Section -->
+
  <!-- Features Section -->
     <section id="features" class="features section">
 
@@ -1031,343 +1312,468 @@
 
     </section><!-- /Why Us Section -->
 
-    <div class="cv-container">
-    <!-- Header Section -->
-    <div class="header-section">
-        <div class="profile-info">
-            <div class="name-title">
-                <h1>Latif Farhan Hussein Al-Hamdani</h1>
-                <div class="subtitle">Eng. Latif Farhan Hussein Al-Hamdani</div>
-                <div class="subtitle">Mechanical Engineer - Expert in Cooling and Heating Systems</div>
-            </div>
-            
-            <div class="contact-info">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="contact-item">
-                            <i class="bi bi-telephone-fill"></i>
-                            <span>07746000448 - 07746000460</span>
+    <!-- CV Section -->
+    <section id="cv" class="section">
+      <div class="cv-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="profile-info">
+                <div class="name-title">
+                    <h1>Latif Farhan Hussein Al-Hamdani</h1>
+                    <div class="subtitle">Eng. Latif Farhan Hussein Al-Hamdani</div>
+                    <div class="subtitle">Mechanical Engineer - Expert in Cooling and Heating Systems</div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-item">
+                                <i class="bi bi-telephone-fill"></i>
+                                <span>07746000448 - 07746000460</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <span>contact@alhamdany.com.iq</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <span>alhamdany@iq.com</span>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="bi bi-envelope-fill"></i>
-                            <span>latifcooling@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="bi bi-envelope-fill"></i>
-                            <span>alhamdany@iq.com</span>
+                        <div class="col-md-6">
+                            <div class="contact-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Iraq - Kirkuk - Al-Jumhuriya Street, opposite the Fish Market</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bi bi-mailbox"></i>
+                                <span>Postal Code: 36001</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bi bi-calendar"></i>
+                                <span>Born: Makhmour - Erbil - Iraq 1981</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="contact-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>Iraq - Kirkuk - Al-Jumhuriya Street, opposite the Fish Market</span>
+                </div>
+
+                <div class="social-links mt-3">
+                    <a href="#" class="social-link">
+                        <i class="bi bi-facebook"></i>
+                        <span>Eng Latif Alhamdany</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="bi bi-tiktok"></i>
+                        <span>Abo Firas</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="bi bi-instagram"></i>
+                        <span>Abo Firas</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="bi bi-snapchat"></i>
+                        <span>Abo Firas</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Languages -->
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <i class="bi bi-translate me-2"></i>
+                        Languages
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Arabic</span>
+                            <span>100%</span>
                         </div>
-                        <div class="contact-item">
-                            <i class="bi bi-mailbox"></i>
-                            <span>Postal Code: 36001</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
                         </div>
-                        <div class="contact-item">
-                            <i class="bi bi-calendar"></i>
-                            <span>Born: Makhmour - Erbil - Iraq 1981</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Kurdish</span>
+                            <span>100%</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Turkish</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>English</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Persian</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <i class="bi bi-graph-up me-2"></i>
+                        Statistics
+                    </h3>
+                    <div class="stats-section">
+                        <div class="stat-card">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Years of Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Satisfied Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Technical Support</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specializations -->
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <i class="bi bi-gear-fill me-2"></i>
+                        Specializations
+                    </h3>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-primary">Central Cooling Systems</span>
+                        <span class="badge bg-info">Package Units</span>
+                        <span class="badge bg-success">Cold Storage</span>
+                        <span class="badge bg-warning">Fresh Air Units</span>
+                        <span class="badge bg-danger">Solar Energy Systems</span>
+                        <span class="badge bg-dark">Water Treatment</span>
                     </div>
                 </div>
             </div>
 
-            <div class="social-links mt-3">
-                <a href="#" class="social-link">
-                    <i class="bi bi-facebook"></i>
-                    <span>Eng Latif Alhamdany</span>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="bi bi-tiktok"></i>
-                    <span>Abo Firas</span>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="bi bi-instagram"></i>
-                    <span>Abo Firas</span>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="bi bi-snapchat"></i>
-                    <span>Abo Firas</span>
-                </a>
+            <!-- Main Content Area -->
+            <div class="main-content-area">
+                <!-- Education -->
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <i class="bi bi-mortarboard-fill me-2"></i>
+                        Academic Qualifications
+                    </h3>
+                    <div class="education-item">
+                        <div class="item-title">Bachelor's in Mechanical Engineering</div>
+                        <div class="item-subtitle">Northern Technical College</div>
+                        <p>Specialized in heating, cooling, and mechanical energy systems</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="item-title">Bachelor's in Geology</div>
+                        <div class="item-subtitle">University of Mosul</div>
+                        <p>Comprehensive study in earth sciences and applied geology</p>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <i class="bi bi-briefcase-fill me-2"></i>
+                        Work Experience
+                    </h3>
+                    
+                    <div class="experience-item">
+                        <div class="item-title">Cooling Systems Engineer - Azadi Teaching Hospital</div>
+                        <div class="item-subtitle">More than 10 years</div>
+                        <p>Worked on cooling devices for the forensic medicine department, burns unit, chillers, and main hospital blowers</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-title">Cooling Systems Engineer - Oil Training Institute</div>
+                        <div class="item-subtitle">Ministry of Oil - Kirkuk</div>
+                        <p>Worked on cooling devices for the Oil Training Institute building in Kirkuk</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-title">Design and Implementation of Cold Storage</div>
+                        <div class="item-subtitle">Multiple projects in Iraq</div>
+                        <p>Built refrigerated warehouses for food products in Sulaymaniyah, Kalar, Arbat, Kifri, Tikrit, Al-Alam, Samarra, and Hawija</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-title">Fresh Air Systems for Hospitals</div>
+                        <div class="item-subtitle">Private Hospitals</div>
+                        <p>Installation and maintenance of fresh air units for operating rooms in private hospitals</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-title">Medical Oxygen Systems</div>
+                        <div class="item-subtitle">Hospitals</div>
+                        <p>Installation of oxygen systems for hospitals with advanced safety systems</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-title">Central Cooling Systems Maintenance</div>
+                        <div class="item-subtitle">Technological Institute - Chamchamal</div>
+                        <p>Maintenance of central cooling devices with continuous development and updates</p>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="content-section">
+                    <h3 class="section-title">
+                        <i class="bi bi-tools me-2"></i>
+                        Specialized Services
+                    </h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="experience-item">
+                                <div class="item-title">
+                                    <i class="bi bi-thermometer-snow me-2"></i>
+                                    Central Cooling Systems
+                                </div>
+                                <p>Supply, installation, and maintenance of central cooling systems and package units</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="experience-item">
+                                <div class="item-title">
+                                    <i class="bi bi-cpu me-2"></i>
+                                    Chiller Manufacturing
+                                </div>
+                                <p>Dedicated factory for manufacturing chillers and water coolers of all sizes</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="experience-item">
+                                <div class="item-title">
+                                    <i class="bi bi-wind me-2"></i>
+                                    Fresh Air Units
+                                </div>
+                                <p>For operating rooms and forensic medicine cooled rooms</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="experience-item">
+                                <div class="item-title">
+                                    <i class="bi bi-sun me-2"></i>
+                                    Solar Energy
+                                </div>
+                                <p>Supply and installation of solar energy units for systems</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="experience-item">
+                                <div class="item-title">
+                                    <i class="bi bi-droplet me-2"></i>
+                                    Water Treatment
+                                </div>
+                                <p>Units for filtering and treating drinking and wastewater</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="experience-item">
+                                <div class="item-title">
+                                    <i class="bi bi-wrench me-2"></i>
+                                    Original Spare Parts
+                                </div>
+                                <p>Trading all spare parts from original sources</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+      </div>
+    </section><!-- /CV Section -->
+
+    <!-- Contact Section -->
+<section id="contact" style="background: linear-gradient(135deg, #176863 0%, #4ecdc4 100%); color: white; padding: 80px 0; position: relative; overflow: hidden;">
+  <!-- Background Pattern -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;grid&quot; width=&quot;10&quot; height=&quot;10&quot; patternUnits=&quot;userSpaceOnUse&quot;><path d=&quot;M 10 0 L 0 0 0 10&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.05)&quot; stroke-width=&quot;1&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23grid)&quot;/></svg>'); pointer-events: none;"></div>
+  
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2;">
+    
+    <!-- Section Title -->
+    <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+      <h2 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Contact Us</h2>
+      <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto; line-height: 1.8;">Get in touch with us for all your cooling, water treatment, and solar energy needs. We're here to help you find the perfect solution.</p>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Languages -->
-            <div class="content-section">
-                <h3 class="section-title">
-                    <i class="bi bi-translate me-2"></i>
-                    Languages
-                </h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Arabic</span>
-                        <span>100%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 100%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Kurdish</span>
-                        <span>100%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 100%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Turkish</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>English</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Persian</span>
-                        <span>60%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 60%"></div>
-                    </div>
-                </div>
+    <!-- Contact Content -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- Contact Information -->
+      <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 40px;">
+        <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 30px; color: white;">Get in Touch</h3>
+        
+        <!-- Contact Items -->
+        <div style="margin-bottom: 25px;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="bi bi-geo-alt-fill" style="font-size: 20px; color: white;"></i>
             </div>
-
-            <!-- Statistics -->
-            <div class="content-section">
-                <h3 class="section-title">
-                    <i class="bi bi-graph-up me-2"></i>
-                    Statistics
-                </h3>
-                <div class="stats-section">
-                    <div class="stat-card">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Years of Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Satisfied Clients</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Technical Support</div>
-                    </div>
-                </div>
+            <div>
+              <h4 style="font-weight: 600; margin-bottom: 5px; color: white;">Address</h4>
+              <p style="color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.5;">Iraq - Kirkuk - Al-Jumhuriya Street<br>Opposite the Fish Market<br>Postal Code: 36001</p>
             </div>
-
-            <!-- Specializations -->
-            <div class="content-section">
-                <h3 class="section-title">
-                    <i class="bi bi-gear-fill me-2"></i>
-                    Specializations
-                </h3>
-                <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary">Central Cooling Systems</span>
-                    <span class="badge bg-info">Package Units</span>
-                    <span class="badge bg-success">Cold Storage</span>
-                    <span class="badge bg-warning">Fresh Air Units</span>
-                    <span class="badge bg-danger">Solar Energy Systems</span>
-                    <span class="badge bg-dark">Water Treatment</span>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <!-- Main Content Area -->
-        <div class="main-content-area">
-            <!-- Education -->
-            <div class="content-section">
-                <h3 class="section-title">
-                    <i class="bi bi-mortarboard-fill me-2"></i>
-                    Academic Qualifications
-                </h3>
-                <div class="education-item">
-                    <div class="item-title">Bachelor's in Mechanical Engineering</div>
-                    <div class="item-subtitle">Northern Technical College</div>
-                    <p>Specialized in heating, cooling, and mechanical energy systems</p>
-                </div>
-                <div class="education-item">
-                    <div class="item-title">Bachelor's in Geology</div>
-                    <div class="item-subtitle">University of Mosul</div>
-                    <p>Comprehensive study in earth sciences and applied geology</p>
-                </div>
+        <div style="margin-bottom: 25px;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="bi bi-telephone-fill" style="font-size: 20px; color: white;"></i>
             </div>
-
-            <!-- Experience -->
-            <div class="content-section">
-                <h3 class="section-title">
-                    <i class="bi bi-briefcase-fill me-2"></i>
-                    Work Experience
-                </h3>
-                
-                <div class="experience-item">
-                    <div class="item-title">Cooling Systems Engineer - Azadi Teaching Hospital</div>
-                    <div class="item-subtitle">More than 10 years</div>
-                    <p>Worked on cooling devices for the forensic medicine department, burns unit, chillers, and main hospital blowers</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-title">Cooling Systems Engineer - Oil Training Institute</div>
-                    <div class="item-subtitle">Ministry of Oil - Kirkuk</div>
-                    <p>Worked on cooling devices for the Oil Training Institute building in Kirkuk</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-title">Design and Implementation of Cold Storage</div>
-                    <div class="item-subtitle">Multiple projects in Iraq</div>
-                    <p>Built refrigerated warehouses for food products in Sulaymaniyah, Kalar, Arbat, Kifri, Tikrit, Al-Alam, Samarra, and Hawija</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-title">Fresh Air Systems for Hospitals</div>
-                    <div class="item-subtitle">Private Hospitals</div>
-                    <p>Installation and maintenance of fresh air units for operating rooms in private hospitals</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-title">Medical Oxygen Systems</div>
-                    <div class="item-subtitle">Hospitals</div>
-                    <p>Installation of oxygen systems for hospitals with advanced safety systems</p>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-title">Central Cooling Systems Maintenance</div>
-                    <div class="item-subtitle">Technological Institute - Chamchamal</div>
-                    <p>Maintenance of central cooling devices with continuous development and updates</p>
-                </div>
+            <div>
+              <h4 style="font-weight: 600; margin-bottom: 5px; color: white;">Phone</h4>
+              <p style="color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.5;">+964 770 130 4887<br>+964 774 600 0448<br>+964 774 600 0460</p>
             </div>
-
-            <!-- Services -->
-            <div class="content-section">
-                <h3 class="section-title">
-                    <i class="bi bi-tools me-2"></i>
-                    Specialized Services
-                </h3>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="experience-item">
-                            <div class="item-title">
-                                <i class="bi bi-thermometer-snow me-2"></i>
-                                Central Cooling Systems
-                            </div>
-                            <p>Supply, installation, and maintenance of central cooling systems and package units</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="experience-item">
-                            <div class="item-title">
-                                <i class="bi bi-cpu me-2"></i>
-                                Chiller Manufacturing
-                            </div>
-                            <p>Dedicated factory for manufacturing chillers and water coolers of all sizes</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="experience-item">
-                            <div class="item-title">
-                                <i class="bi bi-wind me-2"></i>
-                                Fresh Air Units
-                            </div>
-                            <p>For operating rooms and forensic medicine cooled rooms</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="experience-item">
-                            <div class="item-title">
-                                <i class="bi bi-sun me-2"></i>
-                                Solar Energy
-                            </div>
-                            <p>Supply and installation of solar energy units for systems</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="experience-item">
-                            <div class="item-title">
-                                <i class="bi bi-droplet me-2"></i>
-                                Water Treatment
-                            </div>
-                            <p>Units for filtering and treating drinking and wastewater</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="experience-item">
-                            <div class="item-title">
-                                <i class="bi bi-wrench me-2"></i>
-                                Original Spare Parts
-                            </div>
-                            <p>Trading all spare parts from original sources</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div style="margin-bottom: 25px;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="bi bi-envelope-fill" style="font-size: 20px; color: white;"></i>
+            </div>
+            <div>
+              <h4 style="font-weight: 600; margin-bottom: 5px; color: white;">Email</h4>
+              <p style="color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.5;">contact@alhamdany.com.iq<br>alhamdany@iq.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="bi bi-clock-fill" style="font-size: 20px; color: white;"></i>
+            </div>
+            <div>
+              <h4 style="font-weight: 600; margin-bottom: 5px; color: white;">Business Hours</h4>
+              <p style="color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.5;">Sunday - Thursday: 8:00 AM - 6:00 PM<br>Friday - Saturday: 9:00 AM - 4:00 PM<br>24/7 Emergency Support</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div style="margin-top: 30px;">
+          <h4 style="font-weight: 600; margin-bottom: 15px; color: white;">Follow Us</h4>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; border-radius: 25px; font-size: 14px; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2);" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+              <i class="bi bi-facebook" style="font-size: 16px;"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; border-radius: 25px; font-size: 14px; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2);" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+              <i class="bi bi-instagram" style="font-size: 16px;"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; border-radius: 25px; font-size: 14px; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2);" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+              <i class="bi bi-tiktok" style="font-size: 16px;"></i>
+              <span>TikTok</span>
+            </a>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; border-radius: 25px; font-size: 14px; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2);" onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+              <i class="bi bi-snapchat" style="font-size: 16px;"></i>
+              <span>Snapchat</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information Card -->
+      <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 40px;">
+        <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 30px; color: white;">Visit Our Office</h3>
+        
+        <!-- Map Placeholder -->
+        <div style="width: 100%; height: 250px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.2);">
+          <div style="text-align: center; color: rgba(255, 255, 255, 0.8);">
+            <i class="bi bi-geo-alt-fill" style="font-size: 3rem; margin-bottom: 10px; display: block; color: #4ecdc4;"></i>
+            <p style="margin: 0; font-size: 1.1rem; font-weight: 500;">Al-Jumhuriya Street, Kirkuk</p>
+            <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Opposite the Fish Market</p>
+          </div>
+        </div>
+
+
+        <!-- Services Overview -->
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px;">
+          <h4 style="font-weight: 600; margin-bottom: 20px; color: white; display: flex; align-items: center; gap: 10px;">
+            <i class="bi bi-tools" style="color: #4ecdc4;"></i>
+            Our Services
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+              <i class="bi bi-thermometer-snow" style="color: #4ecdc4; font-size: 18px;"></i>
+              <span style="color: rgba(255, 255, 255, 0.9); font-size: 14px;">Central Cooling</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+              <i class="bi bi-droplet" style="color: #4ecdc4; font-size: 18px;"></i>
+              <span style="color: rgba(255, 255, 255, 0.9); font-size: 14px;">Water Treatment</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+              <i class="bi bi-sun" style="color: #4ecdc4; font-size: 18px;"></i>
+              <span style="color: rgba(255, 255, 255, 0.9); font-size: 14px;">Solar Energy</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+              <i class="bi bi-gear" style="color: #4ecdc4; font-size: 18px;"></i>
+              <span style="color: rgba(255, 255, 255, 0.9); font-size: 14px;">Maintenance</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
 
-
+</main>
 
   <footer id="footer" class="footer dark-background">
-
-
-
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">مكتب الحمداني لانظمة التبريد والتحلية</span>
+            <span class="sitename">Al-Hamdani Office for Cooling and Desalination Systems</span>
           </a>
           <div class="footer-contact pt-3">
             <p>Iraq - Baghdad</p>
             <p>Al-Jumhuriya Street</p>
             <p>Opposite the Fish Market</p>
-            <p ><strong>Phone:</strong> <span>( +964 770 130 4887 )</span></p>
-            <p> <strong>Email:</strong> <span>latifcooling@gmail.com</span>  </p>
+            <p><strong>Phone:</strong> <span>(+964 770 130 4887)</span></p>
+            <p><strong>Email:</strong> <span>contact@alhamdany.com.iq</span></p>
           </div>
         </div>
 
         <div class="col-lg-4 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li> <a href="#">Home</a> <i class="bi bi-chevron-right"></i> </li>
-            <li> <a href="#">About Us</a> <i class="bi bi-chevron-right"></i> </li>
-            <li> <a href="#">Our Services</a> <i class="bi bi-chevron-right"></i> </li>
-            <li> <a href="#">Terms of Service</a> <i class="bi bi-chevron-right"></i> </li>
+            <li><a href="#">Home</a> <i class="bi bi-chevron-right"></i></li>
+            <li><a href="#">About Us</a> <i class="bi bi-chevron-right"></i></li>
+            <li><a href="#">Our Services</a> <i class="bi bi-chevron-right"></i></li>
+            <li><a href="#">Terms of Service</a> <i class="bi bi-chevron-right"></i></li>
           </ul>
         </div>
-        <!-- 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li> <a href="#">Web Design</a> <i class="bi bi-chevron-right"></i> </li>
-            <li> <a href="#">Web Development</a> <i class="bi bi-chevron-right"></i> </li>
-            <li> <a href="#">Product Management</a> <i class="bi bi-chevron-right"></i> </li>
-            <li> <a href="#">Marketing</a> <i class="bi bi-chevron-right"></i> </li>
-          </ul>
-        </div> -->
-
 
         <div class="col-lg-4 col-md-12">
           <h4>Follow Us</h4>
@@ -1399,7 +1805,21 @@
     let button = document.getElementById("languageButton")
     button.addEventListener("click", function() {
       let currentLanguage = button.textContent.trim();
-        window.location.href = "index-ar.html"; // Redirect to English version
+        window.location.href = "index-ar.html"; // Redirect to Arabic version
+    });
+
+    // Add simple hover effects and interactions for product cards
+    document.querySelectorAll('.btn-add-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const originalText = this.textContent;
+            this.textContent = 'Added!';
+            this.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+            
+            setTimeout(() => {
+                this.textContent = originalText;
+                this.style.background = 'linear-gradient(135deg, #4ecdc4, #44a08d)';
+            }, 1500);
+        });
     });
   </script>
 
